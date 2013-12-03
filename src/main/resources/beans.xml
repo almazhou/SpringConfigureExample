@@ -1,0 +1,30 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="com.springapp.mvc"/>
+
+    <bean name="sequenceGenerator" class="com.springapp.mvc.SequenceGenerator">
+
+    </bean>
+
+    <bean id = "cashier" class="com.springapp.domain.Cashier">
+        <property name="name" value="cashier1"/>
+        <property name="path" value="temp"/>
+
+    </bean>
+    <bean id="aaa" class="com.springapp.domain.Product">
+        <property name="name" value="AAA"/>
+        <property name="price" value="2.5"/>
+    </bean>
+    <bean id="bbb" class="com.springapp.domain.Product">
+        <property name="name" value="BBB"/>
+        <property name="price" value="2.5"/>
+    </bean>
+    <bean id="shoppingCart" class="com.springapp.domain.ShoppingCart" scope="singleton"></bean>
+    <bean id="prototypeShoppingCart" class="com.springapp.domain.ShoppingCart" scope="prototype"></bean>
+
+</beans>
