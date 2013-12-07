@@ -63,6 +63,13 @@
             <version>8.1.12.v20130726</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.owasp.antisamy</groupId>
+            <artifactId>antisamy</artifactId>
+            <version>1.5.3</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>

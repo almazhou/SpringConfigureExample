@@ -27,4 +27,5 @@
     <bean id="shoppingCart" class="com.springapp.domain.ShoppingCart" scope="singleton"></bean>
     <bean id="prototypeShoppingCart" class="com.springapp.domain.ShoppingCart" scope="prototype"></bean>
 
+
 </beans>

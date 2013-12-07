@@ -12,4 +12,15 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
+    <bean id = "xssIntercepter" class="com.springapp.domain.XssIntercepter">
+        <constructor-arg index="0" value="src/main/resources/antisamy-myspace-1.4.4.xml"/>
+    </bean>
+    <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
+        <property name="interceptors">
+            <list>
+                <ref bean="xssIntercepter"/>
+            </list>
+        </property>
+    </bean>
+
 </beans>

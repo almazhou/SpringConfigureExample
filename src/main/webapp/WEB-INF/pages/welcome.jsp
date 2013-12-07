@@ -12,5 +12,15 @@
 </head>
 <body>
      <h1>${today}</h1>
+     <form action="<%=request.getContextPath()%>/submitThis" method="get">
+         <p>First name: <input type="text" name="fname" /></p>
+         <p>Last name: <input type="text" name="lname" /></p>
+         <input type="submit" value="Submit" />
+     </form>
+     <h2>Your first name is ${firstName}</h2>
+     <h2>Your first name is ${lastName}</h2>
+     <h2>
+         Time spent is ${time}
+     </h2>
 </body>
 </html>
