@@ -1,7 +1,7 @@
 package com.springapp.domain;
 
-import org.owasp.validator.html.Policy;
-import org.owasp.validator.html.PolicyException;
+import org.owasp.validator.html.*;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
@@ -33,5 +33,22 @@ public class XssIntercepter extends HandlerInterceptorAdapter {
         long currentTime = System.currentTimeMillis();
         Long preTime = (Long) request.getAttribute("time");
         request.setAttribute("time",currentTime- preTime);
+        ModelMap modelMap = modelAndView.getModelMap();
+        for(String key : modelMap.keySet()){
+            modelMap.put(key,cleanXSS(modelMap.get(key).toString()));
+        }
+    }
+
+    private String cleanXSS(String value) {
+        AntiSamy antiSamy = new AntiSamy();
+        try {
+            final CleanResults cr = antiSamy.scan(value, Policy.getInstance("src/main/resources/antisamy-myspace-1.4.4.xml"), AntiSamy.SAX);
+            return cr.getCleanHTML();
+        } catch (ScanException e) {
+            e.printStackTrace();
+        } catch (PolicyException e) {
+            e.printStackTrace();
+        }
+        return "";
     }
 }
