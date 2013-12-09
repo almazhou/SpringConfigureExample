@@ -3,6 +3,7 @@ package com.springapp.domain;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class XssFilter implements Filter {
@@ -15,7 +16,7 @@ public class XssFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-        chain.doFilter(new RequestWrapper((HttpServletRequest) request), response );
+        chain.doFilter(new RequestWrapper((HttpServletRequest) request), new ResponseWrapper((HttpServletResponse) response));
 
     }
 
