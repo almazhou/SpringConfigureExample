@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="ex" uri="custom.tld"%>
 <html>
 <head>
     <title></title>
@@ -22,5 +23,7 @@
      <h2>
          Time spent is ${time}
      </h2>
+     <script>alert("I'm script in jsp")</script>
+     <ex:Hello/>
 </body>
 </html>
