@@ -12,13 +12,24 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
+    <bean id="localeResolver"
+          class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+        <property name="defaultLocale" value="en" />
+    </bean>
+
     <bean id = "xssIntercepter" class="com.springapp.domain.XssIntercepter">
         <constructor-arg index="0" value="src/main/resources/antisamy-myspace-1.4.4.xml"/>
     </bean>
+    <bean id="localeChangeInterceptor"
+          class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+        <property name="paramName" value="language"/>
+    </bean>
+
     <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
         <property name="interceptors">
             <list>
                 <ref bean="xssIntercepter"/>
+                <ref bean="localeChangeInterceptor"/>
             </list>
         </property>
     </bean>

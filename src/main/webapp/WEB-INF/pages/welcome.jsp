@@ -21,9 +21,9 @@
      <h2>Your first name is ${firstName}</h2>
      <h2>Your first name is ${lastName}</h2>
      <h2>
-         Time spent is ${time}
+         Time spent is $    {time}
      </h2>
-     <script>alert("I'm script in jsp")</script>
      <ex:Hello/>
+     Locale:${pageContext.response.locale}
 </body>
 </html>
