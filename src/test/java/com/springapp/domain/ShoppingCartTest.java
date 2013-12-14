@@ -30,6 +30,7 @@ public class ShoppingCartTest {
         shoppingCart2.addItem(bbb);
 
         assertThat(shoppingCart1.getItemName(),is("AAA && BBB"));
+        assertThat(shoppingCart2.getItemName(),is("AAA && BBB"));
     }
 
     @Test

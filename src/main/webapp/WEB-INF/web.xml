@@ -21,6 +21,16 @@
         <filter-name>XSS</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+    <servlet>
+
+        <servlet-name>ownServlet</servlet-name>
+        <servlet-class>com.springapp.mvc.OwnServlet</servlet-class>
+        <load-on-startup>2</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ownServlet</servlet-name>
+        <url-pattern>/ownServlet</url-pattern>
+    </servlet-mapping>
 
     <servlet>
 		<servlet-name>mvc-dispatcher</servlet-name>

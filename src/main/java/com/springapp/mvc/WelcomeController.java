@@ -23,7 +23,7 @@ public class WelcomeController {
         return "welcome";
     }
 
-    @RequestMapping(value = "/submitThis" ,method = RequestMethod.GET)
+    @RequestMapping(value = "/submitThis" ,method = RequestMethod.POST)
     public String submit(@RequestParam String fname,@RequestParam String lname,HttpServletRequest request){
         request.setAttribute("firstName",fname);
         request.setAttribute("lastName",lname);

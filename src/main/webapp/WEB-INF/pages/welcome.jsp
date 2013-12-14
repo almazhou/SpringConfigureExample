@@ -13,7 +13,7 @@
 </head>
 <body>
      <h1>${today}</h1>
-     <form action="<%=request.getContextPath()%>/submitThis" method="get">
+     <form action="<%=request.getContextPath()%>/submitThis" method="post">
          <p>First name: <input type="text" name="fname" /></p>
          <p>Last name: <input type="text" name="lname" /></p>
          <input type="submit" value="Submit" />
