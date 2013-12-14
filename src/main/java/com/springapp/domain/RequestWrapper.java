@@ -49,6 +49,7 @@ public class RequestWrapper extends HttpServletRequestWrapper {
 
     private String cleanXSS(String value) {
         AntiSamy antiSamy = new AntiSamy();
+        if(false){
         try {
             final CleanResults cr = antiSamy.scan(value, Policy.getInstance("src/main/resources/antisamy-myspace-1.4.4.xml"), AntiSamy.SAX);
             return cr.getCleanHTML();
@@ -57,6 +58,7 @@ public class RequestWrapper extends HttpServletRequestWrapper {
         } catch (PolicyException e) {
             e.printStackTrace();
         }
-        return "";
+        }
+        return value;
     }
 }
