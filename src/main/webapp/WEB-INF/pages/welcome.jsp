@@ -7,11 +7,13 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="ex" uri="custom.tld"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <html>
 <head>
-    <title></title>
+    <title><spring:message code="welcome.title" text="Welcome"/></title>
 </head>
 <body>
+     <h2><spring:message code="welcome.message" text="Welcome to Germany"/></h2>
      <h1>${today}</h1>
      <form action="<%=request.getContextPath()%>/submitThis" method="post">
          <p>First name: <input type="text" name="fname" /></p>
