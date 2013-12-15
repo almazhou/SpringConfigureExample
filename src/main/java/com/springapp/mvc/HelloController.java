@@ -24,4 +24,11 @@ public class HelloController {
     public ModelAndView welcomeRedirect() {
         return new ModelAndView("welcomeRedirect");
     }
+
+    @RequestMapping(value = "/testPropertyView",method = RequestMethod.GET)
+    public ModelAndView propertyView() {
+        return new ModelAndView("propertyView");
+    }
+
+
 }
