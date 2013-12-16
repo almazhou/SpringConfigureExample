@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="ex" uri="custom.tld"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="tags" tagdir="/WEB-INF/tags" %>
 <html>
 <head>
     <title><spring:message code="welcome.title" text="Welcome"/></title>
@@ -27,5 +28,8 @@
      </h2>
      <ex:Hello/>
      Locale:${pageContext.response.locale}
+
+    <tags:merry firstName = "zhouxuan"
+             />
 </body>
 </html>
